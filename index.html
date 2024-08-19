@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <title>Inter Result</title>
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <style type="text/css">
+        #submit {
+            height: 28px;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="form1" method="post" onsubmit="return submit_Click();">
+        <div class="content" style="height: 600px; width: 90%; text-align: center">
+            <table width="100%" align="left" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td>&nbsp;</td>
+                    <td align="center">
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0" align="center">
+                            <tr>
+                                <td align="center" colspan="3">
+                                    <img src="images/logo.png" alt="" />
+                                </td>
+                            </tr>
+                        </table>
+                        <table width="100%" align="center">
+                            <tr>
+                                <td align="center" style="
+                      font-family: Arial, Helvetica, sans-serif;
+                      font-size: 13px;
+                    ">
+                                    <font style="font-size: 18px; font-weight: bold">The Institute of Cost Accountants
+                                        of India</font><br />(Statutory body under an Act of Parliament)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="heading" align="center">
+                                    Intermediate Result For Dec 2023 Term
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td width="2%" align="left" valign="top" class="bodytext">
+                        &nbsp;
+                    </td>
+                    <td width="62%" align="left" valign="top" class="bodytext">
+                        <table width="400" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FFCC99"
+                            id="TABLE1">
+                            <tr class="bodytext">
+                                <td class="bluetext" colspan="2"></td>
+                            </tr>
+
+                            <tr class="bodytext">
+                                <td width="182" class="bluehead" height="41" align="center">
+                                    Registration No.:*
+                                </td>
+                                <td width="215" class="bluetext" height="41" align="center">
+                                    <input type="text" name="regno" id="regno" maxlength="11" style="width: 125px" />
+                                </td>
+                            </tr>
+
+                            <tr class="bluehead" valign="middle" class="bodytext" height="41">
+                                <td colspan="2" align="center" width="398" height="41">
+                                    <input type="submit" id="submit" value="Display Result" />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <span class="heading">Instructions :</span>
+                        <ul class="bodytext">
+                            <li>
+                                Registration Number should be entered in 11 digit format e.g.
+                                "00000000000".
+                            </li>
+                            <li>
+                                For Result related queries, please mail to
+                                <a href="mailto:exam.helpdesk@brnad.in" class="link">exam.helpdesk@brand.in</a>
+                            </li>
+                            <li>* Mandatory Field</li>
+                        </ul>
+                        <hr />
+
+                        <p class="bodytext">
+                            <a class="heading"> Disclaimer: </a>&nbsp;The Institute of Cost
+                            Accountants of India is not responsible for any inadvertent
+                            error that may have crept in the results being published on
+                            Internet. The results published on Internet are for immediate
+                            information to the examinees. These can not be treated as
+                            original marksheets.
+                        </p>
+                        <p class="bodytext">&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        <p style="font-weight: bold; font-size: 100%; text-align: center">
+            &copy;
+            <script language="javascript" type="text/javascript">
+                document.write(new Date().getFullYear());
+            </script>&nbsp;
+            <a href="#" style="color: rgb(154, 154, 255); text-decoration: none;">BrandName</a>. All Rights Reserved.
+        </p>
+    </form>
+
+    <script language="javascript" type="text/javascript">
+        function submit_Click() {
+            var regno = document.getElementById("regno").value;
+
+            // Check if the registration number length is exactly 11 digits
+            if (regno.length != 11) {
+                alert("Registration No. should be entered in 11 digit format");
+                document.getElementById("regno").focus();
+                return false;
+            }
+
+            // Regular expression to ensure the registration number is numeric
+            var mob = /^[0-9]{11}$/;
+            if (!mob.test(regno)) {
+                alert("Please enter only numeric values in Registration No.");
+                document.getElementById("regno").focus();
+                return false;
+            }
+
+            // Redirect to second.html with registration number as URL parameter
+            window.location.href = 'second.html?regno=' + encodeURIComponent(regno);
+
+            // Prevent the form from submitting normally
+            return false;
+        }
+    </script>
+</body>
+
+</html>
